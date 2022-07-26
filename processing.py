@@ -1,4 +1,6 @@
 import os
+from pyexpat import model
+from re import M
 from minizinc import Instance, Model, Solver
 
 def processFile(request):
@@ -73,9 +75,12 @@ def processFile(request):
     file.close()
 
 #
-def executeMinizinc():
+def executeMinizinc(modelo):
     #Se carga el modelo
-    modelo = Model("../Modelo/novela.mzn")
+    if (modelo == "option2"):
+        modelo = Model("../Modelo/novela-extendido.mzn")
+    else: modelo = Model("../Modelo/novela-simplificado.mzn")
+    
     #Se añaden los datos
     modelo.add_file("../Modelo/Datos.dzn")
     #Se selecciona el solver

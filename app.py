@@ -14,7 +14,7 @@ def index():
         # print(form_name)
         form = request.form
         processFile(request)
-        result = executeMinizinc()
+        result = executeMinizinc("option1")
         return render_template('index.html', result=result, form=form)
     elif request.method == 'GET':   
         return render_template('index.html')
@@ -39,7 +39,13 @@ def uploadFile():
         os.remove("../Modelo/Datos.dzn")
         os.rename("../Modelo/" + filename, "../Modelo/Datos.dzn")
 
-    result = executeMinizinc()
+    with open('../Modelo/Datos.dzn') as f:
+        if 'Disponibilidad' in f.read():
+            print("True")
+            result = executeMinizinc("option2")
+        else: result = executeMinizinc("option1")
+
+    
     return render_template('index.html', result=result)
     
 

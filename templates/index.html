@@ -4,7 +4,7 @@
 
 <div class="row">
 
-    <div >
+    <div>
         <form id="data-form" action="" method="post">
 
             <div class="row mb-4 align-items-center">
@@ -12,7 +12,8 @@
                     <strong>Número de escenas: </strong>
                 </div>
                 <div class="col-md-6">
-                    <input type="number" id="escenas" name="escenas" class="form-control text-center" min="1" max="50" value="1" required>
+                    <input type="number" id="escenas" name="escenas" class="form-control text-center" min="1" max="50"
+                        value="1" required>
                 </div>
             </div>
 
@@ -21,9 +22,23 @@
                     <strong>Número de actores: </strong>
                 </div>
                 <div class="col-md-6">
-                    <input type="number" id="actores" name="actores" class="form-control text-center" min="1" max="50" value="1" required>
+                    <input type="number" id="actores" name="actores" class="form-control text-center" min="1" max="50"
+                        value="1" required>
                 </div>
             </div>
+
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-6">
+                    <input type="radio" name="options" id="option1" value="option1" checked="checked"
+                        > <strong> Modelo 1 </strong> </input>
+                </div>
+                <div class="col-md-6">
+                    <input type="radio" name="options" id="option2" value="option2" > <strong> Modelo 2 </strong>
+                    </input>
+                </div>
+
+            </div>
+
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm table-bordered" id="dataTable">
@@ -49,95 +64,113 @@
                                 6
                             </th>
                             <th>Costo</th>
-                            
+
                         </tr>
                     </thead>
-            
+
                     <tbody>
                         <tr id="fixedRow">
                             <td>
                                 Actor 1
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
                                 <input type="number" name="escena" class="form-control coordinates" min="0" required>
                             </td>
-                            
+
                         </tr>
-            
+
                         <tr id="fixedRow">
                             <td>
                                 Actor 2
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0"  required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" required>
                             </td>
-                            
+
                         </tr>
-            
+
                         <tr id="fixedRow">
                             <td>
                                 Actor 3
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
-                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1" required>
+                                <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    required>
                             </td>
                             <td>
                                 <input type="number" name="escena" class="form-control coordinates" min="0" required>
                             </td>
-                            
+
                         </tr>
-            
+
                         <tr id="fixedRow">
                             <td>
                                 Duración
@@ -161,26 +194,120 @@
                                 <input type="number" name="duracion" class="form-control coordinates" min="0" required>
                             </td>
                             <td>
-                                
+
                             </td>
-                            
+
                         </tr>
-            
+
                     </tbody>
                 </table>
             </div>
-           
+
+
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm table-bordered" id="">
+                        <thead>
+                            <tr>
+
+
+                                <th colspan="2" scope="rowgroup">Disponibilidad</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr id="fixedRow">
+                                <td>
+                                    Actor 1
+                                </td>
+                                <td>
+                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                        required>
+                                </td>
+
+
+                            </tr>
+
+                            <tr id="fixedRow">
+                                <td>
+                                    Actor 2
+                                </td>
+                                <td>
+                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                        required>
+                                </td>
+
+
+                            </tr>
+
+                            <tr id="fixedRow">
+                                <td>
+                                    Actor 3
+                                </td>
+                                <td>
+                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                        required>
+                                </td>
+
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm table-bordered" id="">
+                        <thead>
+                            <tr>
+
+
+                                <th colspan="2" scope="rowgroup">Evitar</th>
+
+                                <th><button type="button" class="btn btn-success btn-add" id="">
+                                        +
+                                    </button>
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr id="fixedRow">
+                                <td>
+                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                        required>
+                                </td>
+                                <td>
+                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                        required>
+                                </td>
+                                <td></td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
         </form>
     </div>
 
-    
+
 
 </div>
 
 <div class="row mb-4 align-items-center">
     <div class="col-md-6">
         <form action="{{ url_for('uploadFile') }}" method="post" enctype="multipart/form-data">
-            <input  type="file" name="uploadFile" id="uploadFile" accept=".dzn">
+            <input type="file" name="uploadFile" id="uploadFile" accept=".dzn">
             <br>
             <input class="btn btn-primary btn-lg" type="submit">
         </form>
@@ -190,16 +317,17 @@
     </div>
 </div>
 
-<div class="col-6">
+<div >
 
 
-<div class="alert alert-light alert-dismissible fade show align-self-end mt-4" role="alert">
-    El orden de la grabación de las escenas es:
-    {% if result %}
+    <div class="alert alert-light alert-dismissible fade show align-self-end mt-4" role="alert">
+        El orden de la grabación de las escenas es:
+        <br>
+        {% if result %}
 
-    {{result}}
-    
-    {% endif %}
-</div>
+        {{result}}
 
-{% endblock%}
+        {% endif %}
+    </div>
+
+    {% endblock%}

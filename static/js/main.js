@@ -1,20 +1,28 @@
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    $('#uploadFile').click(function () {
-        addRow();
-    })
+//     $('#uploadFile').click(function () {
+//         addRow();
+//     })
 
-    $(document).on('click', '.btn-remove', function () {
+//     $(document).on('click', '.btn-remove', function () {
         
-    });
+//     });
 
-    function addRow() {
-       console.log("lo presione");
-    }
+//     function addRow() {
+//        console.log("lo presione");
+//     }
 
-    function removeRow(btn) {
+//     function removeRow(btn) {
        
+//     }
+// })
+
+$('[name="options"]').on('change', function(){  
+    if($(this).val()  === "option2"){
+      $('#collapseOne').collapse('show')
+    }else{
+       $('#collapseOne').collapse('hide')
     }
-})
+  });
 
 
