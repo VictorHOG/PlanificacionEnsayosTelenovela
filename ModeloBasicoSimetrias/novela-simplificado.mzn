@@ -77,14 +77,24 @@ constraint costo = sum(i in rangoActores) (
 										sum(j in intervalos[i,1]..intervalos[i,2]) (Duracion[orden[j]])*Escenas[i,m+1]);
 
 % Todas las escenas que valgan cero van de primero en el orden.
-constraint symmetry_breaking_constraint(forall(k in 1..numZeroedColumns) (orden[k] = zeroedColumns[k]));
-
-constraint forall(j in 2..m) (if Escenas[..,j] = Escenas[..,j-1] /\  Duracion[j] = Duracion[j+1]
-															then orden[j] < orden[j+1] 
-															endif
+constraint symmetry_breaking_constraint(
+	forall(k in 1..numZeroedColumns) (orden[k] = zeroedColumns[k])
 );
+% % Forzar un orden en aquellas escenas contiguas que sean iguales y que no sean columnas cero.
+% constraint symmetry_breaking_constraint(
+% forall(j in 2..m) ( if Escenas[..,j] = Escenas[..,j-1] /\  Duracion[j] = Duracion[j-1]	 /\ sum(Escenas[..,j]) != 0
+% 										then orden[j] < orden[j-1]
+% 										endif
+% ));
+% Forzar un orden en aquellas escenas no contiguas que sean iguales y que no sean columnas cero.
+constraint symmetry_breaking_constraint(
+forall(j in 1..m-1, k in j+1..m) ( 
+				if Escenas[..,j] = Escenas[..,k]  /\ Duracion[j] = Duracion[k] /\ sum(Escenas[..,j]) != 0
+				then orden[j] < orden[k] 
+				endif
+));
 
-% -----------------------------------Objetivo-------------------------------------
+% ------------------------------------Objetivo----------------------------------------
 
 solve minimize costo;
 %solve :: int_search(orden, smallest, indomain_min) minimize costo;
