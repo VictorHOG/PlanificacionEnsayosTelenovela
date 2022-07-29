@@ -5,7 +5,7 @@
 <div class="row">
 
     <div>
-        <form id="data-form" action="" method="post">
+        <form id="data-form" action="{{ url_for('index') }}" method="post">
 
             <div class="row mb-4 align-items-center">
                 <div class="col-md-6">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-6">
                     <input type="number" id="escenas" name="escenas" class="form-control text-center" min="1" max="50"
-                        value="1" required>
+                        value="6" required>
                 </div>
             </div>
 
@@ -23,17 +23,17 @@
                 </div>
                 <div class="col-md-6">
                     <input type="number" id="actores" name="actores" class="form-control text-center" min="1" max="50"
-                        value="1" required>
+                        value="3" required>
                 </div>
             </div>
 
             <div class="row mb-4 align-items-center">
                 <div class="col-md-6">
-                    <input type="radio" name="options" id="option1" value="option1" checked="checked"
-                        > <strong> Modelo 1 </strong> </input>
+                    <input type="radio" name="options" id="option1" value="option1" checked="checked"> <strong> Modelo 1
+                    </strong> </input>
                 </div>
                 <div class="col-md-6">
-                    <input type="radio" name="options" id="option2" value="option2" > <strong> Modelo 2 </strong>
+                    <input type="radio" name="options" id="option2" value="option2"> <strong> Modelo 2 </strong>
                     </input>
                 </div>
 
@@ -204,7 +204,7 @@
             </div>
 
 
-            <div id="collapseOne" class="panel-collapse collapse">
+            <!-- <div id="collapseOne" class="panel-collapse collapse">
                 <div class="table-responsive">
                     <table class="table table-striped table-sm table-bordered" id="">
                         <thead>
@@ -222,7 +222,7 @@
                                     Actor 1
                                 </td>
                                 <td>
-                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    <input type="number" name="disponibilidad" class="form-control disponibilidad" value="0" min="0"
                                         required>
                                 </td>
 
@@ -234,7 +234,7 @@
                                     Actor 2
                                 </td>
                                 <td>
-                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    <input type="number" name="disponibilidad" class="form-control disponibilidad" value="0" min="0"
                                         required>
                                 </td>
 
@@ -246,7 +246,7 @@
                                     Actor 3
                                 </td>
                                 <td>
-                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
+                                    <input type="number" name="disponibilidad" class="form-control disponibilidad"  min="0" 
                                         required>
                                 </td>
 
@@ -279,12 +279,20 @@
                         <tbody>
                             <tr id="fixedRow">
                                 <td>
-                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
-                                        required>
+                                    <select>
+                                        <option disabled selected value> -- select an option -- </option>
+                                        <option>Actor 1</option>
+                                        <option>Actor 2</option>
+                                        <option>Actor 3</option>
+                                      </select>
                                 </td>
                                 <td>
-                                    <input type="number" name="escena" class="form-control coordinates" min="0" max="1"
-                                        required>
+                                    <select>
+                                        <option disabled selected value> -- select an option -- </option>
+                                        <option>Actor 1</option>
+                                        <option>Actor 2</option>
+                                        <option>Actor 3</option>
+                                      </select>
                                 </td>
                                 <td></td>
 
@@ -295,7 +303,7 @@
                     </table>
                 </div>
 
-            </div>
+            </div> -->
 
         </form>
     </div>
@@ -317,7 +325,7 @@
     </div>
 </div>
 
-<div >
+<div>
 
 
     <div class="alert alert-light alert-dismissible fade show align-self-end mt-4" role="alert">

@@ -18,11 +18,14 @@
 // })
 
 $('[name="options"]').on('change', function(){  
-    if($(this).val()  === "option2"){
-      $('#collapseOne').collapse('show')
-    }else{
-       $('#collapseOne').collapse('hide')
-    }
-  });
+  if($(this).val()  === "option2"){
+    $('#collapseOne').collapse('show')
+    $('.disponibilidad').attr('required', '');
+  
+  }else{
+     $('#collapseOne').collapse('hide')
+     $('.disponibilidad').removeAttr('required');
+  }
+});
 
 
