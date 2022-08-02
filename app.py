@@ -12,9 +12,11 @@ def index():
     if request.method == 'POST':
         # form_name = request.form['form-name']
         # print(form_name)
+        modelo = request.form.get('options')
+        print(modelo)
         form = request.form
         processFile(request)
-        result = executeMinizinc("option1")
+        result = executeMinizinc(modelo)
         return render_template('index.html', result=result, form=form)
     elif request.method == 'GET':   
         return render_template('index.html')
