@@ -333,9 +333,14 @@
     <div class="alert alert-light alert-dismissible fade show align-self-end mt-4" role="alert">
         El orden de la grabación de las escenas es:
         <br>
+        <br>
         {% if result %}
 
-        {{result}}
+        
+
+        {% for para in result %}
+            <p>{{para}}</p>
+        {% endfor %}
 
         {% endif %}
     </div>
