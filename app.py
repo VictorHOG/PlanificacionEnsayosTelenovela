@@ -10,16 +10,11 @@ ALLOWED_EXTENSIONS = set(['dzn'])
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        # form_name = request.form['form-name']
-        # print(form_name)
         modelo = request.form.get('options')
-        print(modelo)
         form = request.form
         processFile(request)
         text = executeMinizinc(modelo)
-        print(text)
         result = str(text)
-        print(result)
         result = result.split('\n')
         return render_template('index.html', result=result, form=form)
     elif request.method == 'GET':   
@@ -27,7 +22,6 @@ def index():
 
 def allowed_file(file):
     file = file.split('.')
-    print(file)
     if file[1] in ALLOWED_EXTENSIONS:
         return True
     return False
@@ -36,18 +30,14 @@ def allowed_file(file):
 def uploadFile():
 
     file = request.files["uploadFile"]
-    print(file, file.filename)
     filename = secure_filename(file.filename)
-    print(filename)
     if file and allowed_file(filename):
-        print("permitido")
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
         os.remove("../Modelo/Datos.dzn")
         os.rename("../Modelo/" + filename, "../Modelo/Datos.dzn")
 
     with open('../Modelo/Datos.dzn') as f:
         if 'Disponibilidad' in f.read():
-            print("True")
             text = executeMinizinc("option2")
             result = str(text)
             result = result.split('\n')

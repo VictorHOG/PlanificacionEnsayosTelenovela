@@ -1,13 +1,7 @@
 import os
-from pyexpat import model
-from re import M
 from minizinc import Instance, Model, Solver
 
 def processFile(request):
-    
-    print("######################################################")
-    print("el request")
-    print(request)
 
     modelo = request.form.get('options')
 
@@ -18,16 +12,6 @@ def processFile(request):
     duracion = request.form.getlist('duracion')
     disponibilidad = request.form.getlist('disponibilidad')
     evitar = request.form.getlist('evitar')
-
-    print("numero de escenas " + numeroEscenas)
-    print("numero de actores" + numeroActores)
-    print( escenas)
-    print(duracion)
-    print(disponibilidad)
-    print("disponibilidad")
-    print("evitar")
-    print(evitar)
-    print("######################################################")
 
     #Se crea el archivo dzn con los datos ingresados
     directoryPath = "../Modelo"
@@ -79,16 +63,8 @@ def processFile(request):
 
     file.write(duracionFile)
 
+    #se escriben opciones para modelo 2
     if(modelo == "option2"):
-        print("se escribiran opciones para modelo 2")
-
-        # Disponibilidad =[|Actor1, 5
-        #          |Actor2, 8
-        #          |Actor3, 0
-        #          |Actor4, 10|];
-
-        # Evitar =[|Actor1, Actor2
-        #         |Actor2, Actor3|];
 
         disponibilidadFile = "Disponibilidad = ["
         for i in range(int(numeroActores)):
@@ -98,18 +74,11 @@ def processFile(request):
             elif (i == 0):
                 disponibilidadFile += "|Actor" + str(i+1) + ", " + disponibilidad[i] 
             else:
-                print("imprimiendo i")
-                print(i) 
                 disponibilidadFile += "\n|Actor" + str(i+1) + ", " + disponibilidad[i] 
 
         disponibilidadFile += "];\n\n"
 
         file.write(disponibilidadFile)
-
-        print(len(evitar))
-        print(len(evitar)//2)
-
-        #mitadActores = 
 
         evitarFile = "Evitar = ["
         for i in range(len(evitar)): 
@@ -121,7 +90,6 @@ def processFile(request):
             elif (i == len(evitar)-1):
                 evitarFile += evitar[i] 
             else: evitarFile += evitar[i] + ","
-
 
         evitarFile += "|];"
 
@@ -145,8 +113,5 @@ def executeMinizinc(modelo):
     instance = Instance(solver, modelo)
     #Se ejecuta el modelo
     result = instance.solve()
-
-    print(result)
-    print(result.solution)
 
     return result

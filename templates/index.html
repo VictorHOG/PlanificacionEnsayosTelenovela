@@ -12,7 +12,7 @@
                     <strong>Número de escenas: </strong>
                 </div>
                 <div class="col-md-6">
-                    <input type="number" id="escenas" name="escenas" class="form-control text-center" min="1" max="50"
+                    <input type="number" id="escenas" name="escenas" class="form-control text-center" min="1" max="20"
                         value="6" required>
                 </div>
             </div>
@@ -22,9 +22,14 @@
                     <strong>Número de actores: </strong>
                 </div>
                 <div class="col-md-6">
-                    <input type="number" id="actores" name="actores" class="form-control text-center" min="1" max="50"
+                    <input type="number" id="actores" name="actores" class="form-control text-center" min="1" max="20"
                         value="3" required>
                 </div>
+            </div>
+
+
+            <div class="row mb-4 align-items-center">
+                <p id="valores"></p>
             </div>
 
             <div class="row mb-4 align-items-center">
@@ -69,8 +74,8 @@
                     </thead>
 
                     <tbody>
-                        <tr id="fixedRow">
-                            <td>
+                        <tr id="fixedRowDataTable">
+                            <td class="actorNumber">
                                 Actor 1
                             </td>
                             <td>
@@ -103,7 +108,7 @@
 
                         </tr>
 
-                        <tr id="fixedRow">
+                        <tr>
                             <td>
                                 Actor 2
                             </td>
@@ -137,7 +142,7 @@
 
                         </tr>
 
-                        <tr id="fixedRow">
+                        <tr>
                             <td>
                                 Actor 3
                             </td>
@@ -171,7 +176,7 @@
 
                         </tr>
 
-                        <tr id="fixedRow">
+                        <tr>
                             <td>
                                 Duración
                             </td>
@@ -206,7 +211,7 @@
 
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm table-bordered" id="">
+                    <table class="table table-striped table-sm table-bordered" id="disponibilidad">
                         <thead>
                             <tr>
 
@@ -217,37 +222,37 @@
                         </thead>
 
                         <tbody>
-                            <tr id="fixedRow">
-                                <td>
+                            <tr id="fixedRowDisponibilidad">
+                                <td class="actorNumber">
                                     Actor 1
                                 </td>
                                 <td>
                                     <input type="number" name="disponibilidad" class="form-control disponibilidad"
-                                         min="0" required>
+                                        min="0">
                                 </td>
 
 
                             </tr>
 
-                            <tr id="fixedRow">
+                            <tr>
                                 <td>
                                     Actor 2
                                 </td>
                                 <td>
                                     <input type="number" name="disponibilidad" class="form-control disponibilidad"
-                                        min="0" required>
+                                        min="0">
                                 </td>
 
 
                             </tr>
 
-                            <tr id="fixedRow">
+                            <tr>
                                 <td>
                                     Actor 3
                                 </td>
                                 <td>
                                     <input type="number" name="disponibilidad" class="form-control disponibilidad"
-                                        min="0" required>
+                                        min="0">
                                 </td>
 
                             </tr>
@@ -261,14 +266,14 @@
 
 
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm table-bordered" id="">
+                    <table class="table table-striped table-sm table-bordered" id="table-evitar">
                         <thead>
                             <tr>
 
 
                                 <th colspan="2" scope="rowgroup">Evitar</th>
 
-                                <th><button type="button" class="btn btn-success btn-add" id="">
+                                <th><button type="button" class="btn btn-success btn-add" id="btn-add">
                                         +
                                     </button>
                                 </th>
@@ -277,29 +282,23 @@
                         </thead>
 
                         <tbody>
-                            <tr id="fixedRow">
+                            <tr id="fixedRowEvitar">
                                 <td>
-                                    <select required name="evitar" class="disponibilidad">
+                                    <select required name="evitar" class="disponibilidad resourceSize">
                                         <option disabled selected value> -- select an option -- </option>
-                                        <option>Actor1</option>
-                                        <option>Actor2</option>
-                                        <option>Actor3</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <select required name="evitar" class="disponibilidad">
+                                    <select required name="evitar" class="disponibilidad resourceSize">
                                         <option disabled selected value> -- select an option -- </option>
-                                        <option>Actor1</option>
-                                        <option>Actor2</option>
-                                        <option>Actor3</option>
                                     </select>
                                 </td>
-                                <td></td>
+                                <td class="remove"></td>
 
 
                             </tr>
 
-                            
+
 
                         </tbody>
                     </table>
@@ -336,10 +335,10 @@
         <br>
         {% if result %}
 
-        
+
 
         {% for para in result %}
-            <p>{{para}}</p>
+        <p>{{para}}</p>
         {% endfor %}
 
         {% endif %}
